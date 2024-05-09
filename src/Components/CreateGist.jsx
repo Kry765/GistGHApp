@@ -5,6 +5,9 @@ import { GistButton } from "./CommonComponents/GistButton";
 import { useState } from "react";
 import axios from "axios";
 
+const token = process.env.REACT_APP_TOKEN_GITHUB_API;
+const GitHubURL = process.env.REACT_APP_GITHUB_URL;
+
 export const CreateGist = () => {
   const [descriptionGist, setDescriptionGist] = useState("");
   const [gistFileName, setGistFileName] = useState("");
@@ -13,6 +16,8 @@ export const CreateGist = () => {
   const handleCreateGist = async (e) => {
     e.preventDefault();
     console.log("done");
+    console.log(process.env.REACT_APP_TOKEN_GITHUB_API);
+    console.log(process.env.REACT_APP_GITHUB_URL);
     try {
       const res = await axios.post(
         `${GitHubURL}/gists`,
