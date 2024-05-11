@@ -15,12 +15,12 @@ export const CreateGist = () => {
 
   const handleCreateGist = async (e) => {
     e.preventDefault();
-    console.log("done");
-    console.log(process.env.REACT_APP_TOKEN_GITHUB_API);
-    console.log(process.env.REACT_APP_GITHUB_URL);
+    // console.log("done");
+    // console.log(process.env.REACT_APP_TOKEN_GITHUB_API);
+    // console.log(process.env.REACT_APP_GITHUB_URL);
     try {
       const res = await axios.post(
-        `${GitHubURL}/gists`,
+        `${GitHubURL}`,
         {
           description: descriptionGist,
           files: {
